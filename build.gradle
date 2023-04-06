@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'com.lzy'
+version '1.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task hello {
+    def name = getName()
+    def project = getProject()
+    def group = getGroup()
+    def path = getPath()
+    def version = getVersion()
+
+    setEnabled(true)
+    def enabled = getEnabled()
+
+    println "name = $name project = $project group = $group enabled = $enabled path = $path version = $version"
+
+    doLast { println 'Hello doLast!' }
+    doFirst { println 'Hello doFirst!' }
+
+    project.getLogger().error("This is error level log")
+    project.getLogger().quiet("This is quiet level log")
+}
