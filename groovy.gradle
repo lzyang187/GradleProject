@@ -1,0 +1,25 @@
+task defval {
+    def str1 = '单引号'
+    def str2 = "双引号"
+    println("str1 class name:" + str1.getClass().getName())
+    println("str2 class name:" + str2.getClass().getName())
+
+    def int1 = 1
+    println "${int1 + 2}"
+
+    // List
+    def numList = [0, 1, 2, 3]
+    println numList.getClass().getName() + " ${numList[0]}  ${numList[-1]}"
+    numList.forEach {
+//        println it
+    }
+
+    // Map
+    def map = ['width': 1280, "height": '1920']
+    println map.getClass().getName() + " ${map.height}"
+    map.entrySet().forEach {
+        println it
+    }
+
+
+}

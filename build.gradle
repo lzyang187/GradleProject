@@ -1,6 +1,7 @@
 plugins {
     id 'java'
 }
+apply from: './groovy.gradle'
 
 group 'com.lzy'
 version '1.1-SNAPSHOT'
